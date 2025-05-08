@@ -1,0 +1,31 @@
+<html>
+	<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<script data-consolejs-channel="97053872-0010-12c2-48bc-c60197e00bea" src="https://remotejs.com/agent/agent.js"></script>
+		
+		<script type="importmap"> {
+			"imports": {
+				"three": "../lib/three.module.min.js",
+				"three/addons/": "https://unpkg.com/three@0.176.0/examples/jsm/"
+			}
+		}
+		</script>
+		
+		<script type="module" src="testxr2.js"></script>
+		<style>
+			body {
+				margin: 0; 
+				background-color: #121212; /* Темно-сірий фон */
+			}
+			#events {
+				position: absolute; right: 0; top: 0; height: 30vh; padding: 10px;
+				width: 50vw; overflow: auto; background: white; z-index: 1001;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea id="events"></textarea>
+	</body>
+</html>

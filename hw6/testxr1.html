@@ -8,25 +8,19 @@
 		<script type="importmap"> {
 			"imports": {
 				"three": "../lib/three.module.min.js",
-				"three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+				"three/addons/": "https://unpkg.com/three@0.176.0/examples/jsm/"
 			}
 		}
 		</script>
 		
-		<script type="module" src="testxr.js"></script>
+		<script type="module" src="testxr1.js"></script>
 		<style>
-			body {margin: 0}
-			#ar-button {
-				position: fixed; 
-				z-index: 1001; 
-				padding: 1vh;
-				bottom: 1vh; 
-				left: 50%; 
-				transform: translateX(-50%)
+			body {
+				margin: 0; 
+				background-color: #121212; /* Темно-сірий фон */
 			}
 		</style>
 	</head>
 	<body>
-		<button id="ar-button">Увiйти до WebXR</button>
 	</body>
 </html>

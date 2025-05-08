@@ -42,8 +42,46 @@ document.addEventListener("DOMContentLoaded", () => {
 		renderer.xr.addEventListener("sessionstart", (e) => {
 			console.log("Сесiю WebXR розпочато");
 		});
+		
 		renderer.xr.addEventListener("sessionend", () => {
 			console.log("Сесiю WebXR завершено");
+		});
+		
+		let currentSession = null;
+		
+		const start = async() => {
+			currentSession = await navigator.xr.requestSession("immersive-ar",
+				{
+					optionalFeatures: ["dom-overlay"],
+					domOverlay: {root: document.body}
+				}
+			);
+			console.log(currentSession);
+			
+			renderer.xr.enabled = true;
+			renderer.xr.setReferenceSpaceType("local");
+			await renderer.xr.setSession(currentSession);
+			
+			arButton.textContent = "Завершити сесію WebXR";
+			
+			renderer.setAnimationLoop(() => {
+				renderer.render(scene, camera);
+			});
+		}
+		
+		const end = async() => {
+			currentSession.end();
+			renderer.setAnimationLoop(null);
+			renderer.clear();
+			arButton.style.display = "none";
+		}
+		
+		arButton.addEventListener("click", () => {
+			if (!currentSession) {
+				start();
+			} else {
+				end();
+			}
 		});
 			
 	}
