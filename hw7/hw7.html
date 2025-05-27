@@ -1,0 +1,32 @@
+<html>
+	<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<script data-consolejs-channel="e09be2c4-fb63-0809-b2ef-538b8e420c3f" src="https://remotejs.com/agent/agent.js"></script>
+		
+		<script type="importmap"> {
+			"imports": {
+				"three": "https://unpkg.com/three@0.176.0/build/three.module.min.js",
+				"three/addons/": "https://unpkg.com/three@0.176.0/examples/jsm/"
+			}
+		}
+		</script>
+		<style>
+			body {margin: 0}
+			#ar-button {
+				position: fixed; 
+				z-index: 1001; 
+				padding: 1vh;
+				bottom: 1vh; 
+				left: 50%; 
+				transform: translateX(-50%)
+			}
+		</style>
+		
+		<script type="module" src="hw7.js"></script>
+	</head>
+	<body>
+		<button id="ar-button">Увiйти до WebXR</button>
+	</body>
+</html>
